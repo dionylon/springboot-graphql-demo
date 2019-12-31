@@ -1,0 +1,18 @@
+# auto scan classpath:**/*.graphqls
+type Query {
+    book(id: String): Book
+    authors: [Author!]
+}
+type Mutation {
+    addBook(id: String, name: String, authorId: String): Book
+    addAuthor(id: String, name: String): Author
+}
+type Book {
+    id: String!
+    name: String!
+    author: Author
+}
+type Author {
+    id: String!
+    name: String!
+}

@@ -1,21 +1,27 @@
 package com.dionysun.graphqlkickstart.entity;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.Date;
+
 @Data
-@Document("books")
-@AllArgsConstructor
-public class Book {
+@ToString
+@Builder
+@Document("articles")
+public class Article {
     @Id
     private String id;
-    @Field("name")
-    private String name;
+    @Field("title")
+    private String title;
+    @Field("content")
+    private String content;
     @Field("authorId")
     private String authorId;
-
+    @Field("createBy")
+    private Date createBy;
+    @Field("thumbUp")
+    private Integer thumbUp;
 }
